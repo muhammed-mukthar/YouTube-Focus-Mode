@@ -1,0 +1,189 @@
+/* YouTube Focus Mode - Blur Styles */
+
+/* ============================================
+   HOMEPAGE - Blur video recommendations
+   ============================================ */
+
+/* Main homepage video grid */
+html.ytfocus-enabled ytd-rich-item-renderer,
+html.ytfocus-enabled ytd-rich-grid-media,
+html.ytfocus-enabled ytd-video-renderer,
+html.ytfocus-enabled ytd-compact-video-renderer {
+  filter: blur(15px) !important;
+  transition: filter 0.3s ease !important;
+  pointer-events: none !important;
+}
+
+/* Homepage chips/filter bar - keep visible */
+html.ytfocus-enabled ytd-feed-filter-chip-bar-renderer {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* ============================================
+   SIDEBAR - Blur recommended videos
+   ============================================ */
+
+/* Sidebar on watch page */
+html.ytfocus-enabled #secondary #related,
+html.ytfocus-enabled ytd-watch-next-secondary-results-renderer,
+html.ytfocus-enabled #related ytd-compact-video-renderer,
+html.ytfocus-enabled #related ytd-video-renderer {
+  filter: blur(15px) !important;
+  transition: filter 0.3s ease !important;
+  pointer-events: none !important;
+}
+
+/* "Up next" section */
+html.ytfocus-enabled ytd-compact-autoplay-renderer {
+  filter: blur(15px) !important;
+  pointer-events: none !important;
+}
+
+/* ============================================
+   END SCREEN - Blur video suggestions
+   ============================================ */
+
+/* End screen video cards */
+html.ytfocus-enabled .ytp-endscreen-content,
+html.ytfocus-enabled .ytp-ce-element,
+html.ytfocus-enabled .ytp-videowall-still,
+html.ytfocus-enabled .ytp-suggestion-set {
+  filter: blur(15px) !important;
+  transition: filter 0.3s ease !important;
+  pointer-events: none !important;
+}
+
+/* ============================================
+   SHORTS - Blur shorts shelf
+   ============================================ */
+
+html.ytfocus-enabled ytd-reel-shelf-renderer,
+html.ytfocus-enabled ytd-rich-shelf-renderer[is-shorts] {
+  filter: blur(15px) !important;
+  transition: filter 0.3s ease !important;
+  pointer-events: none !important;
+}
+
+/* ============================================
+   KEEP VISIBLE - Important elements
+   ============================================ */
+
+/* Search bar - always visible */
+html.ytfocus-enabled #search,
+html.ytfocus-enabled #search-form,
+html.ytfocus-enabled #search-input,
+html.ytfocus-enabled ytd-searchbox,
+html.ytfocus-enabled #center {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Header/Masthead - always visible */
+html.ytfocus-enabled #masthead-container,
+html.ytfocus-enabled ytd-masthead {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Navigation/Guide - always visible */
+html.ytfocus-enabled #guide,
+html.ytfocus-enabled ytd-guide-renderer,
+html.ytfocus-enabled ytd-mini-guide-renderer,
+html.ytfocus-enabled #guide-button {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Current video player - always visible */
+html.ytfocus-enabled #player,
+html.ytfocus-enabled #movie_player,
+html.ytfocus-enabled .html5-video-container,
+html.ytfocus-enabled video,
+html.ytfocus-enabled #player-container-outer,
+html.ytfocus-enabled #player-container-inner,
+html.ytfocus-enabled ytd-player {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Video title and info - always visible */
+html.ytfocus-enabled #above-the-fold,
+html.ytfocus-enabled #title.ytd-watch-metadata,
+html.ytfocus-enabled ytd-watch-metadata,
+html.ytfocus-enabled #info-container,
+html.ytfocus-enabled #owner,
+html.ytfocus-enabled #description,
+html.ytfocus-enabled #meta {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Comments section - always visible */
+html.ytfocus-enabled #comments,
+html.ytfocus-enabled ytd-comments {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Search results page - show results */
+html.ytfocus-enabled ytd-search ytd-video-renderer,
+html.ytfocus-enabled ytd-search ytd-channel-renderer,
+html.ytfocus-enabled ytd-search ytd-playlist-renderer {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Subscriptions page - show subscribed content */
+html.ytfocus-enabled ytd-browse[page-subtype="subscriptions"] ytd-rich-item-renderer,
+html.ytfocus-enabled ytd-browse[page-subtype="subscriptions"] ytd-video-renderer,
+html.ytfocus-enabled ytd-browse[page-subtype="subscriptions"] ytd-grid-video-renderer {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Watch Later & Playlists - show content */
+html.ytfocus-enabled ytd-browse[page-subtype="playlist"] ytd-playlist-video-renderer {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* Channel pages - show channel content */
+html.ytfocus-enabled ytd-browse[page-subtype="channels"] ytd-rich-item-renderer,
+html.ytfocus-enabled ytd-two-column-browse-results-renderer[page-subtype="channels"] ytd-rich-item-renderer,
+html.ytfocus-enabled ytd-channel-renderer {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* History page - show history */
+html.ytfocus-enabled ytd-browse[page-subtype="history"] ytd-video-renderer {
+  filter: none !important;
+  pointer-events: auto !important;
+}
+
+/* ============================================
+   DISABLED STATE - Remove all blurs
+   ============================================ */
+
+html.ytfocus-disabled * {
+  filter: none !important;
+}
+
+/* ============================================
+   VISUAL INDICATOR - Blurred content notice
+   ============================================ */
+
+html.ytfocus-enabled ytd-rich-grid-renderer::before {
+  content: "Focus Mode Active - Homepage blurred to reduce distractions";
+  display: block;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}

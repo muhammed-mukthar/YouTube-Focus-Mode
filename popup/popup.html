@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Focus Mode</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="6" fill="#6366f1"/>
+          <circle cx="12" cy="12" r="6" fill="white" opacity="0.9"/>
+          <circle cx="12" cy="12" r="3" fill="#6366f1"/>
+        </svg>
+      </div>
+      <h1>YouTube Focus Mode</h1>
+    </div>
+
+    <div class="toggle-section">
+      <span class="toggle-label">Focus Mode</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggle-enabled">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="status" id="status">
+      <div class="status-icon" id="status-icon"></div>
+      <span id="status-text">Loading...</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info">
+      <p>Blurs distracting content:</p>
+      <ul>
+        <li>Homepage videos</li>
+        <li>Recommended sidebar</li>
+        <li>End screen suggestions</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <span>Stay focused. Watch intentionally.</span>
+    </div>
+
+    <div class="credit">
+      <span>Built with care by</span>
+      <a href="https://x.com/MuktharBuilds" target="_blank" rel="noopener">
+        <svg class="x-icon" viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        @MuktharBuilds
+      </a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

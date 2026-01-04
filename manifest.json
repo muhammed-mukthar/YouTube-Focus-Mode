@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Focus Mode",
+  "description": "Blur YouTube homepage and recommended videos to stay focused. Watch only what you search for.",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "YouTube Focus Mode"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "css": ["content/content.css"],
+      "js": ["content/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  }
+}

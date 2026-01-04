@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Icons for YouTube Focus Mode</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .icon-container { display: inline-block; text-align: center; margin: 20px; }
+        button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+        a { display: block; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>YouTube Focus Mode - Icon Generator</h1>
+    <p>Right-click on each icon and "Save image as..." to download the PNG files.</p>
+
+    <div class="icon-container">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <p>icon-16.png</p>
+    </div>
+
+    <div class="icon-container">
+        <canvas id="icon48" width="48" height="48"></canvas>
+        <p>icon-48.png</p>
+    </div>
+
+    <div class="icon-container">
+        <canvas id="icon128" width="128" height="128"></canvas>
+        <p>icon-128.png</p>
+    </div>
+
+    <script>
+        function drawIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = '#6366f1';
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, size * 0.15);
+            ctx.fill();
+
+            // Outer circle (eye white)
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size * 0.3, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Inner circle (pupil)
+            ctx.fillStyle = '#6366f1';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size * 0.15, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        drawIcon('icon16', 16);
+        drawIcon('icon48', 48);
+        drawIcon('icon128', 128);
+    </script>
+</body>
+</html>
